@@ -167,8 +167,11 @@
 
                         $('.threebars').toggleClass('hamburger').toggleClass('cross');
                         $('.nav_dropdown').slideToggle();
-                        $('.nav_left h1').toggleClass('mobile_nav_bar_active_header');
-                        $('.nav').toggleClass('mobile_nav_bar_active');
+
+                        // if($(element).parent().parent().hasClass('nav_dropdown')) {
+                        //     $('.nav_left h1').toggleClass('mobile_nav_bar_active_header');
+                        //     $('.nav').toggleClass('mobile_nav_bar_active');
+                        // }
                     }
                 }
             });

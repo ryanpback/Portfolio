@@ -10,7 +10,9 @@ $(function() {
             }
         }
     });
-    $('body').on('touchstart', '.threebars', function() {
+    $('body').on('touchstart click', '.threebars', function(event) {
+        event.stopPropagation();
+        event.preventDefault();
         window.vm.mobile = true;
         $(this).toggleClass('hamburger').toggleClass('cross');
         $('.nav_dropdown').slideToggle();
