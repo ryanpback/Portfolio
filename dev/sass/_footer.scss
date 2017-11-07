@@ -1,0 +1,76 @@
+.footer {
+  background-color: $light_blue;
+  &_big {
+    &_holder {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      padding-top: 25px;
+      text-align: center;
+      h1 {
+        margin: 0;
+        margin-bottom: -4px;
+        font-size: 34px;
+        font-family: $josephin;
+        color: $dark;
+        text-decoration: underline;
+        text-decoration-color: $crimson;
+        text-decoration-style: double;
+        text-decoration-skip: ink;
+        @media screen and (max-width: 465px) {
+          font-size: 27px;
+        }
+      }
+    }
+    p {
+      display: block;
+      width: 50%;
+      max-width: 387px;
+      margin: 0 auto;
+      text-align: center;
+      color: $white;
+      font-family: $josephin;
+      font-size: 25px;
+      line-height: 26px;
+      margin-bottom: 25px;
+      @media screen and (max-width: 465px) {
+        width: 82%;
+      }
+      @media screen and (max-width: 320px) {
+        width: 95%;
+      }
+    }
+  }
+
+  &_little {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $darker_blue;
+    a {
+      color: $light_blue;
+      text-decoration: none;
+      i {
+        padding: 10px;
+        font-size: 25px;
+        transform: scale(1);
+        transition: all 200ms;
+        &:hover {
+          transform: scale(1.3);
+          cursor: pointer;
+        }
+      }
+      &:active {
+        color: $light_blue;
+      }
+      &:first-of-type {
+        i {
+          font-size: 21px;
+        }
+      }
+    }
+  }
+}

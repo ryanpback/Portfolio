@@ -1,0 +1,39 @@
+.about {
+  width: 100%;
+  &_holder {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding-top: 25px;
+    text-align: center;
+    h1 {
+      margin: 0;
+      margin-bottom: -4px;
+      font-size: 34px;
+      font-family: $josephin;
+      color: $dark;
+      text-decoration: underline;
+      text-decoration-color: $crimson;
+      text-decoration-style: double;
+      text-decoration-skip: ink;
+      @media screen and (max-width: 465px) {
+        font-size: 27px;
+      }
+    }
+  }
+  p {
+    display: block;
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    color: $indigo;
+    font-family: $josephin;
+    font-size: 25px;
+    line-height: 27px;
+    margin-bottom: 25px;
+    @media screen and (max-width: 465px) {
+      width: 95%;
+    }
+  }
+}

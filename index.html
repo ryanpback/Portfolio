@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ryan Patrick Back</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="/app/css/portfolio.css">
+
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js" charset="utf-8"></script>
+        <script src="/app/js/typed-min.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div class="background_image"></div>
+        <div class="black_background"></div>
+        <div class="container">
+            <div id="app">
+
+                <div class="nav">
+                    <div class="nav_left">
+                        <h1 class="name"></h1>
+                    </div>
+                    <div v-if='status' class="nav_right">
+                        <li class='desktop_li'><a href="#expertise" @click.prevent='scrollPage'>Expertise</a></li>
+                        <li class='desktop_li'><a href="#about" @click.prevent='scrollPage'>About</a></li>
+                        <li class='desktop_li'><a href="#contact" @click.prevent='scrollPage'>Contact</a></li>
+
+                        <div class="threebars hamburger">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+
+                        <div v-if='mobile' class="nav_dropdown">
+                            <a href="#expertise" @click.prevent='scrollPage'><li>Expertise</li></a>
+                            <a href="#about" @click.prevent='scrollPage'><li>About</li></a>
+                            <a href="#contact" @click.prevent='scrollPage'><li>Contact</li></a>
+                        </div>
+                    </div>
+                </div> <!-- end nav -->
+
+                <div class="body_container">
+
+                    <div class="header">
+                        <div class="header_holder">
+                            <h1 class='header_holder_name'>Ryan Patrick Back</h1>
+                        </div>
+                        <h2 class='header_title'>Web Developer</h2>
+                        <h2 class='header_location'>Portland, Oregon</h2>
+                    </div>
+
+                    <hr>
+
+                    <div id="expertise" class="expertise">
+                        <div class="expertise_holder">
+                            <h1>Expertise</h1>
+                        </div>
+
+                        <div class="expertise_tile_holder">
+                            <div class="tile design">
+                                <div class="tile_header">
+                                    <p>Visceral <i class="fa fa-diamond" aria-hidden="true"></i></p>
+                                </div>
+                                <p class='tile_text'>Colors + Layout = Conversion. What a user is seeing on their device will make them come back for more or leave with no plan of ever returning.</p>
+                            </div>
+
+                            <div class="tile front_end">
+                                <div class="tile_header">
+                                    <p>Experience <i class="fa fa-pencil" aria-hidden="true"></i></p>
+                                </div>
+                                <p class='tile_text'>Interaction + Creativity = Experience. Seamlessly integrated interactivty allows for the user to get the most out of what they are looking for.</p>
+                            </div>
+
+                            <div class="tile back_end">
+                                <div class="tile_header">
+                                    <p>Function <i class="fa fa-code" aria-hidden="true"></i></p>
+                                </div>
+                                <p class='tile_text'>Data + Functionality = Everything. Data collection, manipulation, and delivery are the keys to giving users the fast, reliable, and accurate information they seek.</p>
+                            </div>
+                        </div> <!-- end expertise tile holder -->
+                    </div> <!-- end expertise -->
+
+                    <hr>
+
+                    <div id="about" class="about">
+                        <div class="about_holder">
+                            <h1>About</h1>
+                        </div>
+                        <p>Hi, I'm Ryan! A web developer in Portland, Oregon. I'm a driven, logical, and creative professional with full stack experience. I approach new technologies with undaunted enthusiasm and a commitment to writing clean, high quality code. My experience includes project planning, identifying system requirements, design/development, testing, and implementation. As a colleague, I am quick to laugh, eager to engage, and enjoy the close partnerships that programming provides.</p>
+                    </div>
+
+                    <div id='contact' class="footer">
+                        <div class="footer_big">
+                            <div class="footer_big_holder">
+                                <h1>Contact</h1>
+                            </div>
+                            <p>If you are interested in getting together to talk about a new or existing project, or just want to make a new connection, let's grab coffee on me!</p>
+                        </div>
+                        <div class="footer_little">
+                            <a href="mailto:ryapback@gmail.com" target='_blank'><i class="fa fa-envelope-open-o" aria-hidden="true"></i></a>
+                            <a href="https://github.com/ryanpback" target='_blank'><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/ryanpback/" target='_blank'><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/ryanpback" target='_blank'><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/pdxry/" target='_blank'><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                </div> <!-- end body container -->
+            </div> <!-- end app -->
+        </div> <!-- end container -->
+
+        <script type="text/javascript">
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    status: false,
+                    mobile: false
+                },
+                ready: function() {
+                    $('.nav_dropdown').hide();
+                    var _this = this;
+                    $(".name").typed({
+                        strings: ["Ryan Patrick Back", "RPB"],
+                        typeSpeed: 75,
+                        startDelay: 1000,
+                        showCursor: false,
+                        callback: function() {
+                            var width = 40;
+                            var padding = 5;
+                            setTimeout(function() {
+                                if( $(window).width() < 768 ) {
+                                    width = 80;
+                                    padding = 6;
+                                }
+                                $('.nav .nav_left').css({
+                                    'justify-content': 'flex-start',
+                                    'width': width + '%',
+                                });
+                                $('.nav .nav_left h1').css('padding-left', padding + '%');
+                                setTimeout(function() {
+                                    $('.nav').css({
+                                        'position': 'fixed',
+                                        'top': '0',
+                                        'height': '70px'
+                                    });
+                                }, 500)
+                                setTimeout(function() {
+                                    _this.status = true;
+                                    setTimeout(function() {
+                                        $('.body_container').slideDown();
+                                    }, 900)
+                                }, 500)
+                            }, 500);
+                        }
+                    });
+                },
+                methods: {
+                    scrollPage: function(e) {
+                        var element = e.currentTarget;
+
+                        $('html, body').animate({
+                            scrollTop: $( $.attr(element, 'href') ).offset().top - 70
+                        }, 500);
+
+                        $('.threebars').toggleClass('hamburger').toggleClass('cross');
+                        $('.nav_dropdown').slideToggle();
+                        $('.nav_left h1').toggleClass('mobile_nav_bar_active_header');
+                        $('.nav').toggleClass('mobile_nav_bar_active');
+                    }
+                }
+            });
+        </script>
+        <script src="/app/js/scripts-min.js" charset="utf-8"></script>
+    </body>
+</html>
